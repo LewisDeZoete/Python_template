@@ -1,0 +1,54 @@
+* Project introduction
+A little bit about this project.
+_NOTE_: Don't forget to change any instance of *<THIS_REPO>* inside this README!
+
+* Installation
+Clone this repo:
+
+#+begin_src sh
+git clone https://github.com/LewisDeZoete/<THIS_REPO>.git
+#+end_src
+
+Next, create the python environment and install the
+** Linux
+
+#+begin_src sh
+cd <THIS_REPO>
+python -m venv ./env
+# Activate the environment
+source ./env/bin/activate
+# Install requirements, this may take some time!
+python -m pip install -r requirements.txt
+#+end_src
+
+** Windows
+#+begin_src bash
+cd <THIS_REPO>
+python -m venv ./env
+# Activate the environment, may change depending on if using CMD or PowerShell...
+.\env\Scripts\Activate.ps1 # You should see (env) at the front of your prompt
+# Install requirements, this may take some time!
+python -m pip install -r requirements.txt
+#+end_src
+
+* Usage
+Ensure that the virtual environment is active (=source env/bin/activate= for unix or =.\env\Scripts\Activate.ps1= for Windows).
+
+Run the demo using default settings, simply use:
+
+#+begin_src bash
+python demo.py
+#+end_src
+
+*Press `q` to quit the demo.*
+
+For help on the available arguments, use:
+
+#+begin_src bash
+python demo.py -h
+#+end_src
+
+Optional arguments are as follows:
+| Argument flag | Argument description     |
+|---------------+--------------------------|
+| -h, --help    | Show this help dialogue! |
