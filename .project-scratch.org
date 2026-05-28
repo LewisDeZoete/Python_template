@@ -76,6 +76,11 @@ Previous ispell error
 Toggle checkbox, from [ ] to [X]
 *** SPC u SPC u SPC m x - [double prefix] org-toggle-checkbox
 Set checkbox to "[-]"
+** Selecting and surrounding
+*** v i &optional - evil-inner-paren
+Select inner parenthesis, &optional can be (, ", [ etc.
+*** S &optional - evil-surround-region
+Surround selected region with the &optional chars
 
 * Searcher
 Change ~search_string~ value to search for a particular string.
