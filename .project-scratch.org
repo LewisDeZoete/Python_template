@@ -1,4 +1,6 @@
 #+TITLE: Project Scratch
+#+DESCRIPTION: Template for creating a python project
+#+STARTUP: fold
 
 * TODOs
 ** Manual
