@@ -51,17 +51,28 @@ Run scanner by moving cursor inside codeblock, then executing code =C-c C-c=
 
 * Keybinds
 ** Navigation
-*** ] ] - org-next-visible-heading
+*** Python
+**** =] g f= - goto-function.outer
+Go DOWN to next visible _function_ below the cursor
+**** =[ g f= - goto-previous-function.outer
+Go UP to previous visible _function_ above the cursor
+**** =] g C= - goto-class.outer
+Go DOWN to next visible _class_ below cursor
+**** =[ g f= - goto-previous-function.outer
+Go UP to previous visible _class_ above the cursor
+
+*** Org
+**** =] ]= - org-next-visible-heading
 Next heading
-*** [ [ - org-previous-visible-heading
+**** =[ [= - org-previous-visible-heading
 Previous heading
-*** ] h - org-forward-heading-same-level
+**** =] h= - org-forward-heading-same-level
 Next heading same level
-*** [ h - org-backward-heading-same-level
+**** =[ h= - org-backward-heading-same-level
 Previous heading same level
-*** z u - outline-up-heading
+**** =z u= - outline-up-heading
 Backward to higher level heading
-*** C-c C-j - org-goto
+**** =C-c C-j= - org-goto
 Jump to different place without changing the current outline visibility
 ** Visualising
 *** z c - +org/close-fold
