@@ -1,6 +1,33 @@
+* Using this template
+I'm assuming you have the following set up on your machine:
+- [[https://direnv.net/][direnv]] 
+- [[https://docs.astral.sh/uv/][UV]]
+
+Start using this template:
+#+begin_src bash
+# Clone the python template repo
+git clone --depth 1 git@public.github.com:LewisDeZoete/Python_template.git <PROJECT_NAME>
+cd <PROJECT_NAME> && rm -rf .git && git init
+# or uv init <PROJECT_NAME> && echo "layout_uv" > ./<PROJECT_NAME>/.envrc && cd <PROJECT_NAME>
+
+# Ensure direnv can see the project variables
+direnv allow
+
+# Create the project (with an appropriate name)
+uv init --no-readme
+
+# Add any python packages you need basically
+uv add <package_name>
+uv sync
+#+end_src
+
+*NOW REMOVE THIS HEADING AND EDIT THE README!*
+
 * Project introduction
 A little bit about this project.
 _NOTE_: Don't forget to change any instance of *<THIS_REPO>* inside this README!
+
+I've set this up to use [[https://docs.astral.sh/uv/][Astral UV]] to control the python environment and [[https://direnv.net/][direnv]] to control other environmental variables - for example your LSP. You can skip the latter, but I highly recommend at least trying UV.
 
 * Installation
 Clone this repo:
@@ -14,9 +41,13 @@ Next, create the python environment and install the
 
 #+begin_src sh
 cd <THIS_REPO>
-python -m venv ./env
+# Create the virtual environment
+uv init --no-readme
+python -m venv ./venv # for default python style
+
 # Activate the environment
-source ./env/bin/activate
+source ./venv/bin/activate
+
 # Install requirements, this may take some time!
 python -m pip install -r requirements.txt
 #+end_src
