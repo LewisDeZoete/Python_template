@@ -42,12 +42,17 @@ Run scanner by moving cursor inside codeblock, then executing code =C-c C-c=
 
 ** Items
 * Python testing
+If not using uv you may need to set this to whatever python venv you've created.
 #+begin_src emacs-lisp
-(setq org-babel-python-command "/path/to/env/bin/python3")
+(setq org-babel-python-command ".venv/bin/python3")
 #+end_src
 
 #+RESULTS:
 : /path/to/env/bin/python3
+
+#+begin_src python :results output
+print("Hello from your org testing file!")
+#+end_src
 
 * Keybinds
 ** Navigation
