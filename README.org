@@ -12,9 +12,18 @@ cd <PROJECT_NAME> && rm -rf .git && git init
 
 # Ensure direnv can see the project variables
 direnv allow
+#+end_src
 
+** Initialising project
+There are four major ways to initialise the project now, and depending on what you plan on doing with it, these will change:
+    ~--script~ is a standalone file with embedded metadata enumerating its dependencies, along with any Python version requirements.
+    ~--app~ is for things you run, such as a web service, a CLI you don't plan to publish, or an automation project. You run it with uv run main.py. It's not built or installed into the environment, so it's the simplest option.
+    ~--package~ is also for things you run, but as a proper installable package. It gets a ~src/~ layout and a build backend, and it registers a command in ~[project.scripts]~, so you can do uv run myproject after install. Use it when you want to publish a CLI to PyPI or have a real entry point.
+    ~--lib~ is for code other projects will import. It has the same ~src/~ layout and build setup as ~--package~, plus a ~py.typed~ marker so type checkers pick up your annotations, and no CLI entry point.
+
+#+begin_src bash
 # Create the project (with an appropriate name)
-uv init --no-readme
+uv init <init_option> --no-readme
 
 # Add any python packages you need basically
 uv add <package_name>
